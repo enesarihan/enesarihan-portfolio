@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 import Link from "next/link";
+import { sendEmail } from "@/lib/email";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -94,16 +95,15 @@ export default function Contact() {
     setFormStatus("submitting");
 
     try {
-      // Here you would implement actual form submission
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-
-      // Simulated form submission
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setFormStatus("success");
+      console.log(formData);
+
+      await sendEmail(formData);
+
       setFormData({ name: "", email: "", subject: "", message: "" });
 
-      // Reset form status after 5 seconds
       setTimeout(() => {
         setFormStatus("idle");
       }, 5000);
