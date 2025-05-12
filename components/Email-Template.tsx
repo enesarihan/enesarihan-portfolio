@@ -1,26 +1,30 @@
 import React from "react";
 
-export interface EmailTemplateProps {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export default function EmailTemplate({
   name,
   email,
   subject,
   message,
-}) => (
-  <div className="flex flex-1 items-center justify-center bg-amber-50 min-h-screen">
-    <div className="flex items-center justify-center text-center font-bold ">
-      Enes <span className="text-num-1">SARIHAN</span>{" "}
+}: Readonly<EmailTemplateProps>) {
+  return (
+    <div
+      style={{
+        fontFamily: "Arial, sans-serif",
+        backgroundColor: "#fff8e1",
+        padding: "20px",
+        borderRadius: "8px",
+        maxWidth: "600px",
+        margin: "0 auto",
+        color: "#333",
+      }}
+    >
+      <h1 style={{ textAlign: "center", color: "#d97706" }}>
+        Enes <span style={{ color: "#b45309" }}>SARIHAN</span>
+      </h1>
+      <h2>From: {name}</h2>
+      <h3>Email: {email}</h3>
+      <h4>Subject: {subject}</h4>
+      <p style={{ marginTop: "16px" }}>Message: {message}</p>
     </div>
-
-    <h1>From , {name}!</h1>
-    <h2> Email address: {email}</h2>
-    <h3 className="font-bold">Subject: {subject} </h3>
-    <p className="">Message : {message}</p>
-  </div>
-);
+  );
+}
