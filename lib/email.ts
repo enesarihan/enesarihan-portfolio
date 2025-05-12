@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY as string);
 export const sendEmail = async (emailFormData: EmailTemplateProps) => {
   try {
     await resend.emails.send({
-      from: `${"Enes SARIHAN"} ${"onboarding@resend.dev"}`,
+      from: `Enes SARIHAN <onboarding@resend.dev>`,
       to: ["enessarihan35@icloud.com"],
       subject: emailFormData.subject,
       react: await EmailTemplate({
