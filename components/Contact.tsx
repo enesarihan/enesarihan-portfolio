@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import type React from "react";
@@ -166,7 +167,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="flex items-center justify-center gap-8 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -260,7 +261,7 @@ export default function Contact() {
             </Card>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -483,7 +484,7 @@ export default function Contact() {
                 </form>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
